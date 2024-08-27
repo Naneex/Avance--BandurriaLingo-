@@ -6,7 +6,7 @@ BandurriaLingo
 En este pagina busca ayudarte a aprender otros idiomas, interactuando con gente de otros paises o cumpliendo retos que te ayudaran a aumentar tu nivel.
 
 ## Link del Prototipo en Figma
-(https://www.figma.com/design/AB40T7H6ma2L3PSaWKw5Ko/Untitled?node-id=0-1&t=8Sbx4wkrhAhuYlBf-0)
+(https://www.figma.com/proto/AB40T7H6ma2L3PSaWKw5Ko/Untitled?node-id=1-2&t=u0hbbYBG8pyD2Z0L-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ## Integrantes del Equipo
 - Martin Zuñiga
