@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    background-color: #D9E2EC;
+}
+.titulo-flashcard {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 0.5rem;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2); 
+}
+.icono-menu {
+    width: 2rem;
+    margin-right: 10rem;
+}
+
+.apartado-categoria {
+    background-color: white;
+}
+.seccion-categorias {
+    font-family: Arial, sans-serif;
+    width: 900px;
+    margin-top: 10%;
+    margin-left: 22%;
+}
+
+.categorias-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.apartado-categoria {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+.cards-titulo {
+    flex: 0.7;
+}
+.categoria {
+    flex: 1;
+}
+
+.numero-de-cards {
+    flex: 0.5;
+    text-align: center;
+}
+
+.boton-estatus {
+    flex: 0.8;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.boton-crear {
+    background-color: #6c8dff;
+}
+
+.boton-estudiar {
+    background-color: #74c281;
+}
+
