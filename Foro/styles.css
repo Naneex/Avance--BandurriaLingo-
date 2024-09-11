@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f7;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+header .logotipo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .logotipo p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .titulo-foro h2 {
+  font-size: 22px;
+  text-align: center;
+  margin: auto;
+}
+
+header .notificacion img {
+  width: 40px;
+  height: 40px;
+}
+  
+.buscador-crear { /* ESTO */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.buscador-crear input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.boton-crear {
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-crear:hover {
+  background-color: #218838;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.categorias {
+  flex: 3;
+}
+
+.categorias h3 {
+  margin-right: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.columnas-categorias {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoria {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.categoria h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.caja-categoria {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.caja-categoria h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.caja-categoria p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.caja-categoria button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.caja-categoria button:hover {
+  background-color: #0056b3;
+}
+
+.lista-amigos {
+  position: absolute;
+  top: 140px; 
+  right: 20px; 
+  width: 300px; 
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.encabezado-perfil {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.encabezado-perfil img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%; 
+}
+
+.barra-busqueda2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.barra-busqueda2 input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.lista-amigos h4, .encabezado-perfil h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.seccion-amigos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+.seccion-amigos:first-child {
+  border-top: none;
+}
+
+.seccion-amigos p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.amigo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.amigo-item:last-child {
+  border-bottom: none;
+}
+
+.info-amigo {
+  display: flex;
+  align-items: center;
+}
+
+.info-amigo img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.nombre-amigo {
+  font-size: 14px;
+}
+
+.estado-amigo {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-left: 5px;
+}
+
+.estado-amigo.desconectado {
+  background-color: gray;
+}
+
+.icono-chat {
+  width: 18px;
+  height: 18px;
+  background-image: url('chat-icon.png');
+  background-size: cover;
+}
+
+  
