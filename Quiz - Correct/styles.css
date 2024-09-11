@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; 
+    background-position: center; 
+    background-image: url(Img/Flahusa.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-position-y: center;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  header .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header .logo p{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header .foro-titulo h2 {
+    font-size: 22px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  header .notificaciones img {
+        width: 40px;
+        height: 40px;
+  }
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor img {
+    width: 900px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; 
+}
+
+.contenedor button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #18dd53;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contenedor button:hover {
+    background-color: #225c0b;
+}
