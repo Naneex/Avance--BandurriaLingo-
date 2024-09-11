@@ -1,0 +1,225 @@
+body{
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #D9E2EC;
+}
+header {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem; 
+}
+.perfil {
+    margin: 10px;
+}
+nav {
+    width: 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 250px;
+    margin: 0;
+}
+nav img {
+    display: flex;
+    flex-direction: column;
+    width: 35px;
+    margin: 8px;
+    cursor: pointer;
+}
+.boton-principal {
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+}
+.lupa {
+    margin: 2px;
+    width: 20px;
+}
+.buscador-chat {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+    width: 90%;
+}
+.buscador-chat input[type="text"]{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: black;
+}
+.contenedor-mensajes {
+    width: 18rem;
+    background-color: white;
+}
+.contenedor-superior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+h1 {
+    margin: 15px 0;
+    font-size: 2em; 
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-chats {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 10px; 
+    border-bottom: 1px solid #ddd; 
+    cursor: pointer;
+}
+
+.img-perfil {
+    width: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.chat {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.nombre-usuario {
+    font-size: 1em; 
+    font-weight: bold; 
+    margin: 0; 
+}
+
+.ultimo-mensaje {
+    font-size: 0.875em; 
+    margin: 0; 
+    color: #555; 
+}
+
+.contenedor-chat {
+    width: 100%;
+    background-color: white; 
+}
+.foto-perfil {
+    width: 60px;
+    margin-left: 20px;
+}
+.info {
+    width: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.usuario{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-chat {
+    width: 100%;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    height: 620px;
+}
+
+.mensajes {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+.mensaje {
+    margin: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 2px 15px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 40px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1); 
+    border: 2px solid rgb(216, 216, 216);
+    max-width: 65%; 
+    word-wrap: break-word; 
+}
+
+.tercero {
+    align-self: flex-start; 
+    background-color: #f1f0f0;
+}
+
+.msj-usuario {
+    align-self: flex-end; 
+}
+
+.contenedor-chat {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.mensajes {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; /* Scroll para mensajes largos */
+    display: flex;
+    flex-direction: column;
+}
+
+.escribir-mensaje {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ccc;
+}
+
+.campo-mensaje {
+    flex-grow: 1; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.btn-enviar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #45a049;
+}
+.tercero-traducir {
+    position: relative; 
+    display: inline-block;
+    margin-bottom: 20px; 
+}
+.traducir {
+    cursor: pointer;
+}

@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: rgb(186, 211, 211);
+    justify-content: center;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.8rem 0.8rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); 
+    position: sticky; 
+}
+.flecha-volver {
+    width: 25px; 
+    cursor: pointer; 
+}
+.titulo-pagina {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+.contenedor-crear {
+    display: grid;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 15px;
+}
+.contenedor-tarjeta {
+    background-color: rgb(255, 255, 255);
+    padding: 6rem 20rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); 
+}
+.contenedor-crear div {
+    display: grid;
+    gap: 5px;
+}
+.boton {
+    justify-content: center;
+}
+.boton-agregar {
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(29, 71, 223);
+    width: 3.5rem;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.boton-ver-reverso {
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(29, 71, 223);
+    width: 3.5rem;
+    padding: 4px 65px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 20px;
+}
+.contador {
+    font-size: 20px;
+    text-align: right;
+}
+.boton-siguiente {
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(24, 207, 79);
+    width: 3.5rem;
+    padding: 4px 65px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 20px;
+}
+.img-basura {
+    width: 30px;
+    text-align: left;
+}
