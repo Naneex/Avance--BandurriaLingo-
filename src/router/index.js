@@ -3,6 +3,7 @@ import LoginContainer from '../components/LoginContainer.vue'
 import RegisterContainer from '../components/RegisterContainer.vue'
 import MainMenu from '../components/MainMenu.vue'
 import RankingContainer from '../components/RankingContainer.vue'
+import ParesGame from '../components/ParesGame.vue'
 
 
 const routes = [
@@ -10,6 +11,7 @@ const routes = [
   {path : '/register', name: 'RegisterContainer', component: RegisterContainer},
   {path: '/main', name: 'MainMenu', component: MainMenu},
   {path: '/ranking', name: 'RankingContainer', component: RankingContainer},
+  {path: '/pares', name: 'ParesGame', component: ParesGame},
 
 ]
 
