@@ -23,7 +23,7 @@
                 </div>
                 <div class="cuadrito">
                     <img src="../assets/Imagenes/lvltest.png" alt="">
-                    <h2>Test de nivel</h2>
+                    <h2><router-link to="/quiz/principal">Test de nivel</router-link></h2>
                 </div>
                 <div class="cuadrito">
                     <img src="../assets/Imagenes/Rank.png" alt="">
