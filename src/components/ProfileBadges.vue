@@ -7,7 +7,7 @@
 
     <div class="fire-badge">
       <img v-if="usuarioPerfil.rachaDiaria >= 1" src="../assets/Imagenes/Fuego.png" alt="" />
-      <img v-else src="../assets/Imagenes/FuegoApagado.png" alt="Fuego apagado" />
+      <img v-else src="../assets/Imagenes/FuegoApagado.png" alt="Fuego apagado" class="apagado" />
       <span class="racha-number">{{ usuarioPerfil.rachaDiaria }}</span>
     </div>
   </div>
@@ -68,6 +68,7 @@ export default {
 .badge-container img {
   width: 100px;
   height: 100px;
+  margin-left: -35px;
 }
 
 .fire-badge {
@@ -79,17 +80,22 @@ export default {
 .fire-badge img {
   width: 100px;
   height: 100px;
-  margin-left: -10px;
+  margin-left: -15px;
 }
 
 .racha-number {
   position: absolute;
   top: 70%;
-  left: 40%;
+  left: 35%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
   color: rgb(255, 255, 255);
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.apagado {
+ margin-top: 35px;
+ 
 }
 </style>

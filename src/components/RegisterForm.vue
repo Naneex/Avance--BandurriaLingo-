@@ -41,7 +41,9 @@
         xp: 0,
         nivel:0,
         imagen: '',
-        rango: ''
+        rango: '',
+        flashcards: [],
+        rachaDiaria: 0,
 
       };
     },
@@ -70,7 +72,9 @@
             xp: this.xp,
             nivel: this.nivel,
             imagen: "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp",
-            rango:  "Novato"
+            rango:  "Novato",
+            flashcards: this.flashcards,
+            rachaDiaria: this.rachaDiaria
 
         };
         
