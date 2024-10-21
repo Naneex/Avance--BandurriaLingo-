@@ -6,38 +6,38 @@
     <nav v-if="menuVisible" class="nav-menu">
       <ul>
         <li>
-          <img src="./Imagenes/Home.png" alt="">
+          <img src="../assets/Imagenes/Home.png" alt="">
           <router-link to="/Main">Inicio</router-link>
         </li>
         <li>
-          <img src="./Imagenes/ranking.png" alt="">
+          <img src="../assets/Imagenes/ranking.png" alt="">
           <router-link to="/Ranking">Ranking</router-link>
         </li>
         <li>
-          <img src="./Imagenes/reto.png" alt="">
+          <img src="../assets/Imagenes/reto.png" alt="">
           <router-link to="/retodiario">Reto Diario</router-link>
         </li>
         <li>
-          <a @click.prevent="redirectToProfile"><img src="./Imagenes/Perfil.png" alt="">Perfil</a>
+          <a @click.prevent="redirectToProfile"><img src="../assets/Imagenes/Perfil.png" alt="">Perfil</a>
         </li>
         <li>
-          <img src="./Imagenes/reto.png" alt="">
+          <img src="../assets/Imagenes/reto.png" alt="">
           <router-link to="/Pares">Pares</router-link>
         </li>
         <li>
-          <img src="./Imagenes/flashcards.png" alt="">
+          <img src="../assets/Imagenes/flashcards.png" alt="">
           <router-link to="/flashcards">FlashCards</router-link>
         </li>
         <li>
-          <img src="./Imagenes/test.png" alt="">
+          <img src="../assets/Imagenes/test.png" alt="">
           <router-link to="/quiz/principal">Test de nivel</router-link>
         </li>
         <li>
-          <img src="./Imagenes/forum.png" alt="">
+          <img src="../assets/Imagenes/forum.png" alt="">
           <router-link to="/foro">Foro</router-link>
         </li>
         <li>
-          <img src="./Imagenes/msg.png" alt="">
+          <img src="../assets/Imagenes/msg.png" alt="">
           <router-link to="/chat">Chats</router-link>
         </li>
 
@@ -59,7 +59,7 @@
       <div class="profile">
         <a @click.prevent="redirectToProfile"><img src="../assets/Imagenes/Profile.png" alt=""></a>
       </div>
-      <button class="desplegable-icon" @click="toggleDesplegable" ><img src="./Imagenes/Desplegable.png" alt=""></button>
+      <button class="desplegable-icon" @click="toggleDesplegable" ><img src="../assets/Imagenes/Desplegable.png" alt=""></button>
       <nav v-if="desplegableVisible" class="desplegable-menu">
         <ul>
           <li>
