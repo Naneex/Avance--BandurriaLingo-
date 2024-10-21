@@ -34,7 +34,7 @@
         </li>
         <li>
           <img src="../assets/Imagenes/forum.png" alt="">
-          <router-link to="/foro">Foro</router-link>
+          <router-link to="/Foro">Foro</router-link>
         </li>
         <li>
           <img src="../assets/Imagenes/msg.png" alt="">

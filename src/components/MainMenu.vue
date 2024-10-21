@@ -7,7 +7,7 @@
 
                 <div class="secciones-arriba-izq">
                     <img src="../assets/Imagenes/Foro.jpg" alt="">
-                    <h2><router-link to="/foro">Foro</router-link></h2>
+                    <h2><router-link to="/Foro">Foro</router-link></h2>
                 </div>
                 <div class="secciones-arriba-der">
                     <img src="../assets/Imagenes/flashca.jpg" alt="">
