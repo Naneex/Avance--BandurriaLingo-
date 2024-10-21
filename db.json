@@ -22,6 +22,10 @@
         {
           "usuario": "MessiPrueba",
           "mensaje": "Gohan del futuro es el mejor personaje de dbz"
+        },
+        {
+          "usuario": "KendrickLamar",
+          "mensaje": "Buen español"
         }
       ],
       "rachaDiaria": 3
@@ -197,7 +201,13 @@
       "xp": 20,
       "nivel": 0,
       "imagen": "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp",
-      "rango": "Novato"
+      "rango": "Novato",
+      "comentarios": [
+        {
+          "usuario": "KendrickLamar",
+          "mensaje": "Kendrick Soy tu fan"
+        }
+      ]
     }
   ],
   "parespalabras": [
