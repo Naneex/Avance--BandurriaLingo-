@@ -37,7 +37,7 @@ import axios from 'axios';
 const route = useRoute();
 const categoria = route.params.categoria;
 const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
-const usuarioId =usuarioLogueado ? usuarioLogueado.id : null;
+const usuarioId = usuarioLogueado ? usuarioLogueado.id : null;
 console.log("UsuarioId:", usuarioId);
 
 const url = 'http://localhost:3000/usuario'
@@ -51,7 +51,7 @@ const tipo = ref(0);
 async function obetenerFlashcards() {
     try {
     const response = await axios.get(`${url}/${usuarioId}`); 
-    console.log('Usuario:', response.data);
+    console.log('Usuario:', usuarioId);
     const flashcards = response.data.flashcards.filter(flashcard => flashcard.categoria === categoria); 
     console.log(flashcards);
 

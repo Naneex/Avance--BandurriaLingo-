@@ -41,7 +41,8 @@ const route = useRoute();
 const frente = ref('');
 const reverso = ref('');
 const categoria = route.params.categoria;
-const usuarioId = route.params.usuarioId;
+const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+const usuarioId = usuarioLogueado ? usuarioLogueado.id : null;
 
 const url = `http://localhost:3000/usuario/${usuarioId}`;
 console.log("usuario", usuarioId);

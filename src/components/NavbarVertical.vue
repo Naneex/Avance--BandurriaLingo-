@@ -2,13 +2,13 @@
     <nav class="w-16 min-w-16 p-1 bg-white text-white  flex flex-col justify-between shadow-2xl rounded-xl items-center pb-2 pt-2">
         <div>
             <ul>
-                <RouterLink :to="{name: 'Profile', params: { id: usuarioId}}">
+                
                 <IconoComponente
                 :src="userIcon"
                 alt="Perfil del usuario"
                 title="Perfil"
                 />
-                </RouterLink>
+
                 <IconoComponente
                 :src="notificacionesIcon"
                 alt="Notificaciones"
@@ -57,7 +57,7 @@
 
         <div>
             <ul>
-                <RouterLink to="/">
+                <RouterLink to="/main">
                     <IconoComponente
                     :src="menuIcon"
                     alt="Menu"

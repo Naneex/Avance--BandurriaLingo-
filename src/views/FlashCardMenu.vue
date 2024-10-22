@@ -49,6 +49,7 @@ const router = useRouter();
 const cards = ref([]);
 const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
 const usuarioId =usuarioLogueado ? usuarioLogueado.id : null;
+console.log("Usuario:", usuarioLogueado.id);
 
 const countFrases = computed(() => {
    return cards.value.filter(card => card.categoria === 'frases').length;
@@ -95,8 +96,7 @@ function manejarCrear(categoria) {
     router.push({
         name: 'Crear',
         params: { 
-            categoria: categoria.toLowerCase(), 
-            usuarioId: usuarioId 
+            categoria: categoria.toLowerCase()
         }
     });
 }

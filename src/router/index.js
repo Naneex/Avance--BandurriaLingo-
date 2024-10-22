@@ -6,11 +6,10 @@ import RankingContainer from '../components/RankingContainer.vue'
 import ParesGame from '../components/ParesGame.vue'
 import ProfileContainer from '../components/ProfileContainer.vue'
 import RetoDiario from "../views/RetoDiario.vue";
-import HomeView from "../views/HomeView.vue";
 import FlashCardMenu from "../views/FlashCardMenu.vue";
 import ChatWeb from "../views/ChatWeb.vue";
 import StudyFlashCard from "../views/StudyFlashCard.vue";
-import Login from "../simulacion/login.vue"
+
 
 const routes = [
   {path: '/login', name: 'LoginContainer', component: LoginContainer},

@@ -17,12 +17,11 @@
             :src="notificacionesIcon"
             alt="Notificaciones"
           />
-          <RouterLink :to="{name: 'Profile', params: { id: usuarioId}}">
+          
             <IconoComponente
             :src="userIcon"
             alt="Perfil del usuario"
             />
-          </RouterLink>
         </ul>
       </nav>
   
