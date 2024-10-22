@@ -6,8 +6,9 @@
       </div>
       <div class="info-header">
         <button v-if="usuarioPerfil.id === usuarioLogueado.id" class="edit-profile" @click="editarPerfil" >
-          Editar perfil
+          {{ modoEdicion = 'Guardar Cambios' }}
         </button>
+        <input v-if="modoEdicion" type="text" v-model="imagenUrl" placeholder="Pega el enlace de la imagen" class="profile-url">
         <hr class="linea-bajo-perfil" />
       </div>
       <div class="badges">
@@ -17,10 +18,9 @@
     <div class="info">  
       <div class="informacion">
         <p class="lower">Nombre</p>
-        <h2 v-if="!modoEdicion">{{ usuarioPerfil.usuario }}</h2>
-        <input v-else v-model="usuarioPerfil.usuario" class="usuario-name">
+        <input v-model="usuarioPerfil.usuario" class="usuario-name" />
       </div>
-  
+
       <div class="informacion">
         <p class="lower">Nivel</p>
         <h2>{{ usuarioPerfil.nivel }}</h2> 
@@ -38,12 +38,14 @@
 import ProfileBadges from './ProfileBadges.vue';
 import axios from 'axios';
 
+
+
+
 export default {
   data() {
     return {
       usuarioPerfil: {},  
       usuarioLogueado: {},  
-      modoEdicion: false,
       imagenUrl: ''
     };
   },
@@ -65,13 +67,21 @@ export default {
       try {
         const response = await axios.get(`http://localhost:3000/usuario/${id}`);
         this.usuarioPerfil = response.data;
+        this.imagenUrl = this.usuarioPerfil.imagen;
       } catch (error) {
         console.error('Error al obtener el perfil:', error);
       }
     },
+
     editarPerfil() {
-      this.$router.push(`/profile/${this.usuarioLogueado.id}/editar`);
+      if (this.modoEdicion) {
+        this.actualizarUsuario();
+      }
+      this.modoEdicion = !this.modoEdicion;
+
+      this.$router.push(`/profile/${this.usuarioLogueado.id}`);
     },
+
     async actualizarUsuario() {
       try {
         const id = this.usuarioPerfil.id;
@@ -84,7 +94,7 @@ export default {
           ...this.usuarioPerfil
         });
 
-        alert('Cambios guardados con exito');
+        alert('Cambios guardados con éxito');
       } catch (error) {
         console.error('Error al actualizar el perfil', error);
         alert('Hubo un problema al guardar los cambios');
@@ -105,13 +115,13 @@ export default {
 }
 
 .imagen-perfil {
-    display: flex;
+  display: flex;
   margin-top: 15vh;
   justify-content: center;
 }
 
 .imagen-perfil img {
-    display: flex;
+  display: flex;
   width: 10vw;
   height: 20vh;
   background-color: #FFFFFF;
@@ -129,17 +139,9 @@ export default {
 
 .info {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin-top: 15vh; 
   height: auto;
-}
-
-.info-header {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  margin-top: 3vh;
-  min-height: 10vh;
 }
 
 .edit-profile {
@@ -153,8 +155,12 @@ export default {
   height: 5vh;
 }
 
-.edit-profile:hover {
-  background-color: #DCDCDC;
+.info-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vh;
+  min-height: 10vh;
 }
 
 .linea-bajo-perfil {
@@ -190,7 +196,6 @@ export default {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: none; 
 }
 
 .profile-url {
@@ -200,6 +205,5 @@ export default {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: none; 
 }
 </style>
