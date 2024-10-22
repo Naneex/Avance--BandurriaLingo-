@@ -1,6 +1,6 @@
 <template>
   <div class="imagen-logo-register">
-    <img class="imagen-ajustada-container" src="../assets/BandurriaLogin.jpg" alt="Bandurria Logo" />
+    <img class="imagen-ajustada-container" src="../assets/Imagenes/BandurriaLogin.jpg" alt="Bandurria Logo" />
   </div>
 </template>
 
