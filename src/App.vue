@@ -1,8 +1,23 @@
 <template>
-  <div class="h-screen flex justify-center items-center bg-slate-900">
-    <h1 class="text-white text-3xl">Hola, esta es la base</h1>
+  <div id="app">
+    <router-view />
   </div>
 </template>
 
 <script>
+
+export default {
+  name: 'App',
+  components: {
+
+    
+  },
+};
 </script>
+
+<style>
+body{
+  background-color: #D9E2EC ;
+  color: black;
+}
+</style>
