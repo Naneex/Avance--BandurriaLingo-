@@ -4,7 +4,7 @@
         <ul>
           <IconoComponente
             :src="tresLineas"
-            alt="Menu"
+            alt=""
             @click="toggleSidebar"
             class="cursor-pointer"
           />
@@ -17,10 +17,12 @@
             :src="notificacionesIcon"
             alt="Notificaciones"
           />
-          <IconoComponente
+          <RouterLink :to="{name: 'Profile', params: { id: usuarioId}}">
+            <IconoComponente
             :src="userIcon"
             alt="Perfil del usuario"
-          />
+            />
+          </RouterLink>
         </ul>
       </nav>
   
@@ -80,17 +82,16 @@
           <RouterLink to="/flashcards">
           <div class="flex items-center hover:bg-gray-200 hover:rounded-2xl cursor-pointer rounded-2xl transition duration-500">
             <li>
-              <RouterLink to="/flashcards">
                 <IconoComponente
                   :src="flashCardIcon"
                   alt="FlashCards"
                   title="FlashCards"
                 />
-              </RouterLink>
             </li>
             <span class="ml-8">FlashCards</span>
           </div>
           </RouterLink>
+          <RouterLink to="/pares">
           <div class="flex items-center hover:bg-gray-200 hover:rounded-2xl cursor-pointer rounded-2xl transition duration-500">
             <li>
               <IconoComponente
@@ -101,6 +102,8 @@
             </li>
             <span class="ml-8">Juego Pares</span>
           </div>
+        </RouterLink>
+        <RouterLink to="/ranking">
           <div class="flex items-center hover:bg-gray-200 hover:rounded-2xl cursor-pointer rounded-2xl transition duration-500">
             <li>
               <IconoComponente
@@ -111,10 +114,11 @@
             </li>
             <span class="ml-8">Clasificacion</span>
           </div>
+        </RouterLink>
         </ul>
         <ul>
           <li class="flex justify-center">
-            <RouterLink to="/">
+            <RouterLink to="/main">
               <IconoComponente
               :src="menuIcon"
               alt="Principal"
@@ -143,8 +147,10 @@
   import mensajesIcon from '../assets/email1.png'
   import { RouterLink } from 'vue-router';
   
-  const isSidebarOpen = ref(false);
-  
+const isSidebarOpen = ref(false);
+const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+const usuarioId =usuarioLogueado ? usuarioLogueado.id : null;
+
   function toggleSidebar() {
     isSidebarOpen.value = !isSidebarOpen.value;
   }
