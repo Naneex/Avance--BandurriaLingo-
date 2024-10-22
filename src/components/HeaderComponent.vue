@@ -18,7 +18,7 @@
           <router-link to="/retodiario">Reto Diario</router-link>
         </li>
         <li>
-          <a @click.prevent="redirectToProfile"><img src="../assets/Imagenes/Perfil.png" alt="">Perfil</a>
+          <a @click.prevent="redirectToProfile"><img src="../assets/usuario-de-perfil.png" alt="">Perfil</a>
         </li>
         <li>
           <img src="../assets/Imagenes/reto.png" alt="">
@@ -57,7 +57,7 @@
         <img src="../assets/Imagenes/Notificaciones.png" alt="">
       </div>
       <div class="profile">
-        <a @click.prevent="redirectToProfile"><img src="../assets/Imagenes/Profile.png" alt=""></a>
+        <a @click.prevent="redirectToProfile"><img src="../assets/usuario-de-perfil.png" alt=""></a>
       </div>
       <button class="desplegable-icon" @click="toggleDesplegable" ><img src="../assets/Imagenes/Desplegable.png" alt=""></button>
       <nav v-if="desplegableVisible" class="desplegable-menu">
@@ -223,7 +223,7 @@ header h1{
   list-style: none; 
   margin: 1.9rem;
   display: flex;
-  gap: 0.5;
+  gap: 0.1;
   align-items: center;
 }
 
@@ -238,6 +238,7 @@ header h1{
 .nav-menu img{
   width: 2rem; 
   height: 2rem; 
+  margin-right: 1rem;
 }
 
 .overlay {
