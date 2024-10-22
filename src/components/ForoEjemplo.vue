@@ -1,6 +1,6 @@
 <template>
   <div class="foro-ejemplo-container">
-    <HeaderComponent />
+    <HeaderComponente />
     <div class="content-wrapper">
       <MenuLateral />
       <div class="main-content">
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import HeaderComponent from './HeaderComponent.vue';
+import HeaderComponente from './HeaderComponente.vue';
 import MenuLateral from './MenuLateral.vue';
 import ListaAmigos from './ListaAmigos.vue';
  
@@ -53,7 +53,7 @@ export default {
       });
   },
   components: {
-    HeaderComponent,
+    HeaderComponente,
     MenuLateral,
     ListaAmigos
   }
