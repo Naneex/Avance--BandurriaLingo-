@@ -1,0 +1,723 @@
+{
+  "usuario": [
+    {
+      "id": "1",
+      "usuario": "Nanex",
+      "contraseña": "123456",
+      "xp": 10,
+      "nivel": 458,
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "rango": "Experto",
+      "imagen": "https://preview.redd.it/kendrick-lamar-joins-the-list-of-eminem-and-kanye-west-as-v0-dygjfomlwjga1.jpg?width=640&crop=smart&auto=webp&s=7d849ad63731a5c8b9333aaf308610e8247e8fd8",
+      "comentarios": [
+        {
+          "usuario": "Nanex",
+          "mensaje": "ComentarioPrueba"
+        },
+        {
+          "usuario": "Nanex",
+          "mensaje": "Hola esto si funciona"
+        },
+        {
+          "usuario": "MessiPrueba",
+          "mensaje": "Gohan del futuro es el mejor personaje de dbz"
+        }
+      ],
+      "rachaDiaria": 4,
+      "flashcards": [
+        {
+          "categoria": "frases",
+          "frente": "lol",
+          "reverso": "lol"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "usuario": "iiesteban",
+      "contraseña": "esteban123",
+      "xp": 10,
+      "nivel": 420,
+      "idiomaDominado": "Inglés",
+      "idiomaAprender": "Inglés",
+      "rango": "Medio",
+      "imagen": "https://m.media-amazon.com/images/M/MV5BYWVjODZjNDgtYjk4ZS00OTg5LTg5NDQtZDMxZDQ4ZmM5MGJmXkEyXkFqcGc@._V1_.jpg",
+      "rachaDiaria": 0,
+      "comentarios": [
+        {
+          "usuario": "Nanex",
+          "mensaje": "Prueba"
+        },
+        {
+          "usuario": "MessiPrueba",
+          "mensaje": "hola esteban gracias por enseñarme ingles"
+        },
+        {
+          "usuario": "Nanex",
+          "mensaje": "Gracias por ayudarme\n"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "usuario": "AmaroLopez12",
+      "contraseña": "tengohambre",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "rango": "Experto",
+      "xp": 0,
+      "nivel": 417,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL1W373_8YiD6v2Is1r7c590Rad4Ni7Fd8OQ&s"
+    },
+    {
+      "id": "e298",
+      "usuario": "usuario4",
+      "contraseña": "usuario",
+      "nivel": 350,
+      "imagen": "https://i.pinimg.com/736x/10/21/8e/10218e972f966c2ac150d89c3781d7ed.jpg"
+    },
+    {
+      "id": "84ed",
+      "usuario": "usuario5",
+      "contraseña": "usuario",
+      "nivel": 328,
+      "imagen": "https://florsheimcl.vteximg.com.br/arquivos/ids/859765-1000-1000/label-0.jpg"
+    },
+    {
+      "id": "7b6a",
+      "usuario": "usuario6",
+      "contraseña": "usuario",
+      "nivel": 300
+    },
+    {
+      "id": "3896",
+      "usuario": "Saddge",
+      "contraseña": "sadge",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "xp": 0,
+      "nivel": 350,
+      "imagen": "https://i.blogs.es/b06eda/bo300/1366_2000.jpg",
+      "comentarios": [
+        {
+          "usuario": "AmaroLopez12",
+          "mensaje": "asd"
+        },
+        {
+          "usuario": "AmaroLopez12",
+          "mensaje": "aksdasd"
+        },
+        {
+          "usuario": "AmaroLopez12",
+          "mensaje": "asdsad"
+        },
+        {
+          "usuario": "AmaroLopez12",
+          "mensaje": "asdasd"
+        },
+        {
+          "usuario": "AmaroLopez12",
+          "mensaje": "asdsa"
+        },
+        {
+          "usuario": "Nanex",
+          "mensaje": "fdfd"
+        },
+        {
+          "usuario": "Nanex",
+          "mensaje": "asdasd"
+        },
+        {
+          "usuario": "MessiPrueba",
+          "mensaje": "PruebaSadgge\n"
+        }
+      ]
+    },
+    {
+      "id": "3571",
+      "usuario": "FernandoCofreCP",
+      "contraseña": "amoelcp",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "xp": 0,
+      "nivel": 401,
+      "imagen": "https://preview.redd.it/gxn7h4cupe461.jpg?width=400&format=pjpg&auto=webp&s=29b8576187e3393502b01d01c314cdb4494fd9e8"
+    },
+    {
+      "id": "f51e",
+      "usuario": "FernandoCofreCP2",
+      "contraseña": "amoelcp2",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "xp": 0,
+      "nivel": 370,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaA9lKR-t93KcbmdwXsFFMqCuzb5FI-tCCuB_S1wIfhdQWbCqr3dlSOJTYZnaVc1NHcGw&usqp=CAU"
+    },
+    {
+      "id": "49b6",
+      "usuario": "BelenVargas",
+      "contraseña": "belen",
+      "idiomaDominado": "",
+      "idiomaAprender": "",
+      "xp": 0,
+      "nivel": 397,
+      "imagen": "https://static.theclinic.cl/media/2019/10/epidemia-a1.jpg"
+    },
+    {
+      "id": "248e",
+      "usuario": "MessiPrueba",
+      "contraseña": "123",
+      "idiomaDominado": "Inglés",
+      "idiomaAprender": "Español",
+      "xp": 10,
+      "nivel": 382,
+      "imagen": "https://static.messi.com/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-21-at-12.31.50-819x1024.jpeg",
+      "comentarios": [
+        {
+          "usuario": "iiesteban",
+          "mensaje": "Hola soy esteban gracias messi"
+        }
+      ]
+    },
+    {
+      "id": "d05f",
+      "usuario": "PruebaImagen",
+      "contraseña": "111",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Español",
+      "xp": 0,
+      "nivel": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFWgmnx_gKk2aKe3rCKinbyGuDC58Q8ho58w&s"
+    },
+    {
+      "id": "d869",
+      "usuario": "GabrielElChamaKing",
+      "contraseña": "gabo123",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "xp": 0,
+      "nivel": 419,
+      "imagen": "https://lastfm.freetls.fastly.net/i/u/ar0/83ed0ace1f86ab1e23845a7491ead3e1.jpg"
+    },
+    {
+      "id": "6a07",
+      "usuario": "KendrickLamar",
+      "contraseña": "123",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "xp": 10,
+      "nivel": 0,
+      "imagen": "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp",
+      "rango": "Novato"
+    },
+    {
+      "id": "bd6d",
+      "usuario": "Hoch",
+      "contraseña": "123",
+      "idiomaDominado": "Español",
+      "idiomaAprender": "Inglés",
+      "xp": 10,
+      "nivel": 0,
+      "imagen": "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp",
+      "rango": "Novato",
+      "flashcards": [
+        {
+          "categoria": "frases",
+          "frente": "¿Cuál es la capital de Francia?",
+          "reverso": "París"
+        },
+        {
+          "categoria": "frases",
+          "frente": "lol",
+          "reverso": "lol"
+        }
+      ],
+      "rachaDiaria": 1,
+      "retoDiarioJugado": true
+    }
+  ],
+  "parespalabras": [
+    {
+      "id": "1",
+      "nombre": "Frases Comunes",
+      "palabras": [
+        {
+          "es": "Hola",
+          "en": "Hi"
+        },
+        {
+          "es": "Adios",
+          "en": "Goodbye"
+        },
+        {
+          "es": "Perro",
+          "en": "Dog"
+        },
+        {
+          "es": "Gato",
+          "en": "Cat"
+        },
+        {
+          "es": "Casa",
+          "en": "House"
+        },
+        {
+          "es": "Carro",
+          "en": "Car"
+        },
+        {
+          "es": "Rojo",
+          "en": "Red"
+        },
+        {
+          "es": "Azul",
+          "en": "Blue"
+        },
+        {
+          "es": "Verde",
+          "en": "Green"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Frutas",
+      "palabras": [
+        {
+          "es": "Manzana",
+          "en": "Apple"
+        },
+        {
+          "es": "Plátano",
+          "en": "Banana"
+        },
+        {
+          "es": "Naranja",
+          "en": "Orange"
+        },
+        {
+          "es": "Fresa",
+          "en": "Strawberry"
+        },
+        {
+          "es": "Cereza",
+          "en": "Cherry"
+        },
+        {
+          "es": "Pera",
+          "en": "Pear"
+        },
+        {
+          "es": "Uva",
+          "en": "Grape"
+        },
+        {
+          "es": "Sandia",
+          "en": "Watermelon"
+        },
+        {
+          "es": "Melón",
+          "en": "Melon"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Colores",
+      "palabras": [
+        {
+          "es": "Amarillo",
+          "en": "Yellow"
+        },
+        {
+          "es": "Marrón",
+          "en": "Brown"
+        },
+        {
+          "es": "Blanco",
+          "en": "White"
+        },
+        {
+          "es": "Negro",
+          "en": "Black"
+        },
+        {
+          "es": "Rosa",
+          "en": "Pink"
+        },
+        {
+          "es": "Violeta",
+          "en": "Violet"
+        },
+        {
+          "es": "Naranja",
+          "en": "Orange"
+        },
+        {
+          "es": "Gris",
+          "en": "Gray"
+        },
+        {
+          "es": "Verde claro",
+          "en": "Light Green"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "nombre": "Animales del Zoológico",
+      "palabras": [
+        {
+          "es": "Elefante",
+          "en": "Elephant"
+        },
+        {
+          "es": "León",
+          "en": "Lion"
+        },
+        {
+          "es": "Tigre",
+          "en": "Tiger"
+        },
+        {
+          "es": "Jirafa",
+          "en": "Giraffe"
+        },
+        {
+          "es": "Cebra",
+          "en": "Zebra"
+        },
+        {
+          "es": "Oso",
+          "en": "Bear"
+        },
+        {
+          "es": "Mono",
+          "en": "Monkey"
+        },
+        {
+          "es": "Rinoceronte",
+          "en": "Rhinoceros"
+        },
+        {
+          "es": "Hipopótamo",
+          "en": "Hippopotamus"
+        }
+      ]
+    }
+  ],
+  "chats": [
+    {
+      "id": "1",
+      "integrantes": [
+        "1",
+        "2"
+      ],
+      "mensajes": [
+        {
+          "id": "1",
+          "texto": "Hello how are you brother",
+          "remitenteId": "2"
+        },
+        {
+          "id": 2,
+          "texto": "La tuya porisiacaso",
+          "remitenteId": "1"
+        },
+        {
+          "id": 3,
+          "texto": "bro..",
+          "remitenteId": "1"
+        },
+        {
+          "id": 4,
+          "texto": "bro..",
+          "remitenteId": "2"
+        },
+        {
+          "id": 5,
+          "texto": "askdfkaskdsa",
+          "remitenteId": "2"
+        },
+        {
+          "id": 6,
+          "texto": "hola",
+          "remitenteId": "2"
+        },
+        {
+          "id": 7,
+          "texto": "hola dije",
+          "remitenteId": "2"
+        },
+        {
+          "id": 8,
+          "texto": "sdjsd",
+          "remitenteId": "1"
+        },
+        {
+          "id": 9,
+          "texto": "prueba amrtin sahuneza",
+          "remitenteId": "1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "integrantes": [
+        "1",
+        "3"
+      ],
+      "mensajes": [
+        {
+          "id": "1",
+          "texto": "Hello how are you brother",
+          "remitenteId": "1"
+        },
+        {
+          "id": 2,
+          "texto": "Ola",
+          "remitenteId": "3"
+        },
+        {
+          "id": 3,
+          "texto": "Hola",
+          "remitenteId": "1"
+        },
+        {
+          "id": 4,
+          "texto": "How was your day?",
+          "remitenteId": "3"
+        },
+        {
+          "id": 5,
+          "texto": "ssjsk",
+          "remitenteId": "1"
+        },
+        {
+          "id": 6,
+          "texto": "sksdks",
+          "remitenteId": "1"
+        },
+        {
+          "id": 7,
+          "texto": "test",
+          "remitenteId": "3"
+        },
+        {
+          "id": 8,
+          "texto": "Hello bro",
+          "remitenteId": "3"
+        },
+        {
+          "id": 9,
+          "texto": "hola",
+          "remitenteId": "3"
+        },
+        {
+          "id": 10,
+          "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          "remitenteId": "1"
+        },
+        {
+          "id": 11,
+          "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          "remitenteId": "1"
+        },
+        {
+          "id": 12,
+          "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          "remitenteId": "1"
+        },
+        {
+          "id": 13,
+          "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          "remitenteId": "1"
+        },
+        {
+          "id": 14,
+          "texto": "esto es una prueba",
+          "remitenteId": "1"
+        },
+        {
+          "id": 15,
+          "texto": "ssdkasdasd",
+          "remitenteId": "3"
+        },
+        {
+          "id": 16,
+          "texto": "sskdksd",
+          "remitenteId": "3"
+        },
+        {
+          "id": 17,
+          "texto": "asdkasd",
+          "remitenteId": "1"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "integrantes": [
+        "2",
+        "3"
+      ],
+      "mensajes": [
+        {
+          "id": 1,
+          "texto": "ola",
+          "remitenteId": "2"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "integrantes": [
+        "1",
+        "e298"
+      ],
+      "mensajes": [
+        {
+          "id": 1,
+          "texto": "IKSAJDFASD",
+          "remitenteId": "1"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "integrantes": [
+        "1",
+        "84ed"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "6",
+      "integrantes": [
+        "1",
+        "7b6a"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "7",
+      "integrantes": [
+        "1",
+        "49b6"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "8",
+      "integrantes": [
+        "1",
+        "3896"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "9",
+      "integrantes": [
+        "1",
+        "3571"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "10",
+      "integrantes": [
+        "1",
+        "d05f"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "11",
+      "integrantes": [
+        "1",
+        "d869"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "12",
+      "integrantes": [
+        "1",
+        "6a07"
+      ],
+      "mensajes": [
+        {
+          "id": 1,
+          "texto": "ERES KENDRICK",
+          "remitenteId": "1"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "integrantes": [
+        "bd6d",
+        "1"
+      ],
+      "mensajes": [
+        {
+          "id": 1,
+          "texto": "Hola",
+          "remitenteId": "bd6d"
+        }
+      ]
+    }
+  ],
+  "amigos": [
+    {
+      "id": 1,
+      "nombre": "Martin Zúñiga",
+      "online": true
+    },
+    {
+      "id": 2,
+      "nombre": "Leo Messi",
+      "online": true
+    },
+    {
+      "id": 3,
+      "nombre": "Bob Esponja",
+      "online": true
+    },
+    {
+      "id": 4,
+      "nombre": "Juan Manuel",
+      "online": false
+    },
+    {
+      "id": 5,
+      "nombre": "Esteban Ortiz",
+      "online": false
+    },
+    {
+      "id": 6,
+      "nombre": "Sebastián Piñera",
+      "online": false
+    },
+    {
+      "id": 7,
+      "nombre": "Orlando Caullan",
+      "online": false
+    }
+  ],
+  "comentarios": [
+    {
+      "id": 1,
+      "usuario": "Devora_2020",
+      "mensaje": "¡Hola a todos! Soy Devora. Estoy emocionada por aprender inglés con todos ustedes, especialmente los conocimientos culturales que hacen que el idioma sea tan único. ¡Compartamos y crezcamos juntos!",
+      "hashtags": "#CulturalInsights"
+    },
+    {
+      "id": 2,
+      "usuario": "Roberto_2024",
+      "mensaje": "¡Hola a todos! Espero con ansias sumergirme en el inglés.",
+      "hashtags": "#LearnTogether #CulturalInsights"
+    }
+  ]
+}

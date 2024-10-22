@@ -1,0 +1,101 @@
+<template>
+  <div class="badge-container">
+    
+    <img v-if="usuarioPerfil.idiomaDominado === 'Español'" src="../assets/Imagenes/banderaespaña.png" alt="Bandera de España" />
+    <img v-else-if="usuarioPerfil.idiomaDominado === 'Inglés'" src="../assets/Imagenes/USA.png" alt="Bandera de Estados Unidos" />
+    <br />
+
+    <div class="fire-badge">
+      <img v-if="usuarioPerfil.rachaDiaria >= 1" src="../assets/Imagenes/Fuego.png" alt="" />
+      <img v-else src="../assets/Imagenes/FuegoApagado.png" alt="Fuego apagado" class="apagado" />
+      <span class="racha-number">{{ usuarioPerfil.rachaDiaria }}</span>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+export default {
+  props: {
+    idiomaDominado: String,
+    
+  },
+    data() {
+        return {
+        usuarioPerfil: {},
+        };
+    },
+    created() {
+      this.obtenerPerfilUsuario();
+    },
+    
+
+  methods: {
+    async obtenerPerfilUsuario() {
+      const id = this.$route.params.id; 
+      try {
+        const response = await axios.get(`http://localhost:3000/usuario/${id}`);
+        this.usuarioPerfil = response.data;
+      } catch (error) {
+        console.error('Error al obtener el perfil:', error);
+      }
+    }
+}
+}
+
+</script>
+
+<style scoped>
+
+.body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #D9E2EC;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+.badge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.badge-container img {
+  width: 100px;
+  height: 100px;
+  margin-left: -35px;
+}
+
+.fire-badge {
+  position: relative;
+  display: inline-block;
+    margin-top: 20px;
+}
+
+.fire-badge img {
+  width: 100px;
+  height: 100px;
+  margin-left: -15px;
+}
+
+.racha-number {
+  position: absolute;
+  top: 70%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.apagado {
+ margin-top: 35px;
+ 
+}
+</style>
