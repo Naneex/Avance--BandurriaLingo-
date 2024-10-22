@@ -6,19 +6,19 @@
       <div class="main-content">
         <div class="contenido-principal">
           <div class="seccion-imagen">
-            <img :src="require('@/assets/Foro Perfil Rank.png')" alt="Maestro de Rango" class="imagen-rango">
+            <img src="../assets/Foro Perfil Rank.png" alt="Maestro de Rango" class="imagen-rango">
           </div>
     
           <div class="barra-busqueda">
             <input type="text" placeholder="Buscar...">
-            <img :src="require('@/assets/settings.png')" alt="Icono Ajustes" class="icono-ajustes">
+            <img src="../assets/settings.png" alt="Icono Ajustes" class="icono-ajustes">
           </div>
     
           <div class="seccion-comentarios">
             <div v-for="comentario in comentarios" :key="comentario.id" class="caja-comentario">
-              <img :src="require('@/assets/Profile.png')" alt="Avatar de Usuario" class="avatar">
+              <img src= "../assets/Profile.png" alt="Avatar de Usuario" class="avatar">
               <div class="contenido-comentario">
-                <p>@{{ comentario.usuario }}</p>
+                <p>{{ comentario.usuario }}</p>
                 <p>{{ comentario.mensaje }}</p>
                 <p>{{ comentario.hashtags }}</p>
               </div>
@@ -35,7 +35,7 @@
 import HeaderComponent from './HeaderComponent.vue';
 import MenuLateral from './MenuLateral.vue';
 import ListaAmigos from './ListaAmigos.vue';
-
+ 
 export default {
   data() {
     return {

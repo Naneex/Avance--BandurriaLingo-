@@ -9,7 +9,7 @@
         <h2>Foro</h2>
       </div>
       <div class="notificacion">
-        <img src="@/assets/Notification.png" alt="Notificaciones">
+        <img src="../assets/Notification.png" alt="Notificaciones">
       </div>
     </header>
 
@@ -85,7 +85,7 @@
 
       <div class="lista-amigos">
         <div class="encabezado-perfil">
-          <img src="@/assets/Profile.png" alt="Ícono Perfil">
+          <img src="../assets/Profile.png" alt="Ícono Perfil">
           <h4>Proyecto Aplicación</h4>
         </div>
 
@@ -99,7 +99,7 @@
           <p>En línea</p>
           <div class="amigo-item" v-for="amigo in amigosEnLinea" :key="amigo.nombre">
             <div class="info-amigo">
-              <img src="@/assets/Friend.png" alt="Ícono Usuario">
+              <img src="../assets/Friend.png" alt="Ícono Usuario">
               <span class="nombre-amigo">{{ amigo.nombre }}</span>
               <span class="estado-amigo"></span>
             </div>
@@ -111,7 +111,7 @@
           <p>Desconectados (4)</p>
           <div class="amigo-item" v-for="amigo in amigosDesconectados" :key="amigo.nombre">
             <div class="info-amigo">
-              <img src="@/assets/Friend.png" alt="Ícono Usuario">
+              <img src="../assets/Friend.png" alt="Ícono Usuario">
               <span class="nombre-amigo">{{ amigo.nombre }}</span>
               <span class="estado-amigo desconectado"></span>
             </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="lista-amigos">
     <div class="encabezado-perfil">
-      <img :src="require('@/assets/Profile.png')" alt="Ícono Perfil">
+      <img src="../assets/Profile.png" alt="Ícono Perfil">
       <h4>Proyecto Aplicación</h4>
     </div>
     <div class="barra-busqueda2">
@@ -14,7 +14,7 @@
       <p>En línea</p>
       <div v-for="amigo in amigosEnLinea" :key="amigo.id" class="amigo-item">
         <div class="info-amigo">
-          <img :src="require('@/assets/Friend.png')" alt="Ícono Usuario" class="icono-amigo">
+          <img src="../assets/Friend.png" alt="Ícono Usuario" class="icono-amigo">
           <span class="nombre-amigo">{{ amigo.nombre }}</span>
           <span class="estado-amigo"></span>
         </div>
@@ -25,7 +25,7 @@
       <p>Desconectados ({{ amigosDesconectados.length }})</p>
       <div v-for="amigo in amigosDesconectados" :key="amigo.id" class="amigo-item">
         <div class="info-amigo">
-          <img :src="require('@/assets/Friend.png')" alt="Ícono Usuario" class="icono-amigo">
+          <img src="../assets/Friend.png" alt="Ícono Usuario" class="icono-amigo">
           <span class="nombre-amigo">{{ amigo.nombre }}</span>
           <span class="estado-amigo desconectado"></span>
         </div>
@@ -51,10 +51,10 @@ export default {
     }
   },
   mounted() {
-    fetch('/db.json')
+    fetch('http://localhost:3000/amigos')
       .then(response => response.json())
       .then(data => {
-        this.amigos = data.amigos;
+        this.amigos = data;
       })
       .catch(error => {
         console.error('Error fetching amigos:', error);

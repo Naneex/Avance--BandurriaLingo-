@@ -2,31 +2,31 @@
     <div class="menu-lateral">
       <ul>
         <li>
-          <img :src="require('@/assets/Inicioj4j4.png')" alt="Icono Inicio">
+          <img src="../assets/Inicioj4j4.png" alt="Icono Inicio">
           <span><router-link to="/main">Inicio</router-link></span>
         </li>
         <li>
-          <img :src="require('@/assets/reto diario.png')" alt="Icono Reto Diario">
+          <img src="../assets/reto diario.png" alt="Icono Reto Diario">
           <span><router-link to="/retodiario">Reto Diario</router-link></span>
         </li>
         <li>
-          <img :src="require('@/assets/fLashcards.png')" alt="Icono Flashcards">
+          <img src="../assets/fLashcards.png" alt="Icono Flashcards">
           <span><router-link to="/flashcards">Flashcards</router-link></span>
         </li>
         <li>
-          <img :src="require('@/assets/Profile.png')" alt="Icono Perfil">
+          <img src="../assets/Profile.png" alt="Icono Perfil">
           <span><router-link to="/profile/:id">Perfil</router-link></span>
         </li> 
         <li>
-          <img :src="require('@/assets/Foropngj4j4.png')" alt="Icono Foros">
+          <img src="../assets/Foropngj4j4.png" alt="Icono Foros">
           <span><router-link to="/foro">Foro</router-link></span>
         </li>
         <li>
-          <img :src="require('@/assets/test nivel.png')" alt="Icono Test Nivel">
+          <img src="../assets/test nivel.png" alt="Icono Test Nivel">
           <span><router-link to="/quiz/principal">Quiz</router-link></span>
         </li>
         <li>
-          <img :src="require('@/assets/ranking.jpg')" alt="Icono Ranking">
+          <img src="../assets/ranking.jpg" alt="Icono Ranking">
           <span><router-link to="/ranking">Ranking</router-link></span>
         </li>
       </ul>

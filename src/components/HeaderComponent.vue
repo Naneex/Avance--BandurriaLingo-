@@ -8,7 +8,7 @@
       <h2>Cultural Insights from Native Speakers</h2>
     </div>
     <div class="notificacion">
-      <img :src="require('@/assets/Notification.png')" alt="Notificaciones">
+      <img src="../assets/Notification.png" alt="Notificaciones">
     </div>
   </header>
 </template>

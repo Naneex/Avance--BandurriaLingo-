@@ -9,12 +9,12 @@
           <h2>Test de Nivel</h2>
         </div>
         <div class="notificaciones">
-          <img :src="require('@/assets/Notification.png')" alt="Notificaciones">
+          <img src="../assets/Notification.png" alt="Notificaciones">
         </div>
       </header>
   
       <div class="contenedor">
-        <img :src="require('@/assets/RangoBeginner.png')" alt="Rango Obtenido">
+        <img src="../assets/RangoBeginner.png" alt="Rango Obtenido">
         <button @click="$router.push('/quiz/principal')">Back to menu</button>
       </div>
     </div>

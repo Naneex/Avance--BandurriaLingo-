@@ -9,7 +9,7 @@
           <h2>Test de Nivel</h2>
         </div>
         <div class="notificaciones">
-          <img :src="require('@/assets/Notification.png')" alt="Notificaciones">
+          <img src="../assets/Notification.png" alt="Notificaciones">
         </div>
       </header>
   
