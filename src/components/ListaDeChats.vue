@@ -6,7 +6,7 @@
   
       <BuscadorUsuario @buscarUsuario="filtrarUsuarios" />
   
-      <div class="w-full h-full bg-white mt-5 rounded-2xl flex flex-col-reverse shadow-lg overflow-auto">
+      <div class="w-full h-full bg-white mt-5 rounded-2xl flex flex-col shadow-lg overflow-auto">
         <div v-for="usuario in usuariosFiltrados" :key="usuario.id">
           <Chat
             v-if="usuario.id !== props.usuarioActualId"
