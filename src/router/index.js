@@ -14,6 +14,8 @@ import ForoEjemplo from '../components/ForoEjemplo.vue';
 import QuizPrincipal from '../components/QuizPrincipal.vue';
 import QuizCorrect from '../components/QuizCorrect.vue';
 import QuizIncorrect from '../components/QuizIncorrect.vue';
+import ProfileEdit from '../components/ProfileEdit.vue'
+import ProfileEditContainer from '../components/ProfileEditContainer.vue'
 
 
 const routes = [
@@ -23,6 +25,7 @@ const routes = [
   {path: '/ranking', name: 'RankingContainer', component: RankingContainer},
   {path: '/pares', name: 'ParesGame', component: ParesGame},
   {path: '/profile/:id', name: 'ProfileContainer', component: ProfileContainer},
+  {path : '/profile/:id/editar', component: ProfileEditContainer},
   {path: '/chat', component: ChatWeb},
   {path: '/retodiario', component: RetoDiario},
   {path: '/flashcards', component: FlashCardMenu},

@@ -5,10 +5,13 @@
     <img v-else-if="usuarioPerfil.idiomaDominado === 'Inglés'" src="../assets/Imagenes/USA.png" alt="Bandera de Estados Unidos" />
     <br />
 
-    <div class="fire-badge">
+    <div class="fire-badge" v-if="usuarioPerfil.rachaDiaria > 0">
       <img v-if="usuarioPerfil.rachaDiaria >= 1" src="../assets/Imagenes/Fuego.png" alt="" />
-      <img v-else src="../assets/Imagenes/FuegoApagado.png" alt="Fuego apagado" class="apagado" />
       <span class="racha-number">{{ usuarioPerfil.rachaDiaria }}</span>
+    </div>
+
+    <div class="fire-badge" v-else>
+      <img class="apagado" src="../assets/Imagenes/FuegoApagado.png" alt="" />
     </div>
   </div>
 </template>
@@ -75,6 +78,7 @@ export default {
   position: relative;
   display: inline-block;
     margin-top: 20px;
+
 }
 
 .fire-badge img {
@@ -85,17 +89,17 @@ export default {
 
 .racha-number {
   position: absolute;
-  top: 70%;
-  left: 35%;
+  top: 75%;
+  left: 33%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(255, 255, 255);
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.apagado {
- margin-top: 35px;
- 
+.fire-badge img.apagado {
+  width: 200px;
+  height: 200px;
 }
 </style>
