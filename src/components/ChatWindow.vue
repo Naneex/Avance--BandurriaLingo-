@@ -1,6 +1,6 @@
 <template>
     <div class="bg-slate-300 w-full rounded-2xl">
-      <ChatHeader :nombre="usuarioHablar.usuario" :imagen="usuarioHablar.imagen"/>
+      <ChatHeader :nombre="usuarioHablar.usuario" :imagen="usuarioHablar.imagen" :usuarioHablarId="usuarioHablar.id"/>
   
       <div class="h-[calc(100vh-125px)] overflow-hidden bg-slate-00">
         <div class="h-full overflow-auto">
