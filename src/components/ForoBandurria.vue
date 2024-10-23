@@ -2,15 +2,15 @@
   <div class="contenedor">
     <header>
       <div class="logo">
-        <h1>Bandurria</h1>
-        <p>Lingo</p>
+        <h1 @click="goToMain" style="cursor: pointer;">Bandurria</h1>
+        <p @click="goToMain" style="cursor: pointer;">Lingo </p>
       </div>
       <div class="titulo-foro">
         <h2>Foro</h2>
       </div>
       <div class="notificacion">
-        <img src="../assets/Notification.png" alt="Notificaciones">
-      </div>
+          <img src="../assets/Notification.png" alt="Notificaciones" @click="abrirModalNotificacion"> 
+        </div>
     </header>
 
     <main>
@@ -137,6 +137,12 @@
           </form>
         </div>
       </div>
+      <div id="modalNotificacion" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar" @click="cerrarModalNotificacion">&times;</span>
+          <h2>No hay notificaciones pendientes</h2>
+        </div>
+      </div>
 
       <div id="fondoOscuro" class="fondo-oscuro"></div>
     </main>
@@ -165,6 +171,10 @@ export default {
     };
   },
   methods: {
+    goToMain() {
+      this.$router.push('/main');  
+    },
+    
     abrirModal() {
       document.getElementById('modal').style.display = 'block';
       document.getElementById('fondoOscuro').style.display = 'block';
@@ -173,6 +183,16 @@ export default {
       document.getElementById('modal').style.display = 'none';
       document.getElementById('fondoOscuro').style.display = 'none';
     },
+
+    abrirModalNotificacion() {
+      document.getElementById('modalNotificacion').style.display = 'block';
+      document.getElementById('fondoOscuro').style.display = 'block';
+    },
+    cerrarModalNotificacion() {
+      document.getElementById('modalNotificacion').style.display = 'none';
+      document.getElementById('fondoOscuro').style.display = 'none';
+    },
+
     crearCategoria() {
       if (this.nuevaCategoria.nombre && this.nuevaCategoria.descripcion) {
         console.log('Nueva categoría creada:', this.nuevaCategoria);
@@ -184,7 +204,7 @@ export default {
       }
     },
     goToForoEjemplo() {
-      this.$router.push({ name: 'ForoEjemplo' });
+      this.$router.push('/foroejemplo');
     }
   }
 };

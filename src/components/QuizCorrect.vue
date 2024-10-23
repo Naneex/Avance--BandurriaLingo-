@@ -15,7 +15,7 @@
   
       <div class="contenedor">
         <img src="../assets/RankMaster.png" alt="Rango Obtenido">
-        <button @click="$router.push('/quiz/principal')">Back to menu</button>
+        <button @click="$router.push('/main')">Back to menu</button>
       </div>
     </div>
   </template>
