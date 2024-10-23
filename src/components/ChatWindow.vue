@@ -23,9 +23,11 @@
   import MensajeInput from './MensajeInput.vue';
   import ChatHeader from './ChatHeader.vue';
   import axios from 'axios';
+  import { useRoute } from 'vue-router';
   
+  const route = useRoute();
   const nuevoMensaje = ref("");
-  
+  const usuarioIdDD = ref(route.params.id_usuario);
   const props = defineProps({
     usuarioHablar: Object,
     usuarioActual: Object

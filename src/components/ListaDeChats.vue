@@ -6,7 +6,7 @@
   
       <BuscadorUsuario @buscarUsuario="filtrarUsuarios" />
   
-      <div class="w-full h-full bg-white mt-5 rounded-2xl flex flex-col shadow-lg overflow-auto">
+      <div class="w-full h-full bg-white mt-5 rounded-2xl flex flex-col-reverse shadow-lg overflow-auto">
         <div v-for="usuario in usuariosFiltrados" :key="usuario.id">
           <Chat
             v-if="usuario.id !== props.usuarioActualId"
@@ -32,13 +32,15 @@
   import BuscadorUsuario from './BuscadorUsuario.vue';
   import Chat from './Chat.vue';
   import ChatWindow from './ChatWindow.vue';
+  import { useRouter } from 'vue-router';
   
   const url = 'http://localhost:3000/usuario/'; 
   
   const usuarios = ref([]);  
   const usuarioActual = ref(null); 
   const chatSeleccionado = ref(null); 
-  
+  const router = useRouter();
+
   const props = defineProps({
     usuarioActualId: String
   });
@@ -61,6 +63,8 @@
   const abrirChat = (usuario) => {
     chatSeleccionado.value = usuario;
     console.log('Chat seleccionado:', chatSeleccionado.value);
+
+    router.push(`/chat/${usuario.id}`);
   };
   
   const terminoBusqueda = ref('');

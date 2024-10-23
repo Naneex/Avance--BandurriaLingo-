@@ -667,54 +667,142 @@
           "remitenteId": "bd6d"
         }
       ]
+    },
+    {
+      "id": "14",
+      "integrantes": [
+        "2",
+        "e298"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "15",
+      "integrantes": [
+        "2",
+        "248e"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "16",
+      "integrantes": [
+        "2",
+        "d869"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "17",
+      "integrantes": [
+        "2",
+        "bd6d"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "18",
+      "integrantes": [
+        "2",
+        "6a07"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "19",
+      "integrantes": [
+        "2",
+        "3571"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "20",
+      "integrantes": [
+        "2",
+        "7b6a"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "21",
+      "integrantes": [
+        "2",
+        "84ed"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "22",
+      "integrantes": [
+        "2",
+        "f51e"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "23",
+      "integrantes": [
+        "2",
+        "3896"
+      ],
+      "mensajes": []
+    },
+    {
+      "id": "24",
+      "integrantes": [
+        "2",
+        "d05f"
+      ],
+      "mensajes": []
     }
   ],
   "amigos": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Martin Zúñiga",
       "online": true
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Leo Messi",
       "online": true
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Bob Esponja",
       "online": true
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Juan Manuel",
       "online": false
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Esteban Ortiz",
       "online": false
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Sebastián Piñera",
       "online": false
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "Orlando Caullan",
       "online": false
     }
   ],
   "comentarios": [
     {
-      "id": 1,
+      "id": "1",
       "usuario": "Devora_2020",
       "mensaje": "¡Hola a todos! Soy Devora. Estoy emocionada por aprender inglés con todos ustedes, especialmente los conocimientos culturales que hacen que el idioma sea tan único. ¡Compartamos y crezcamos juntos!",
       "hashtags": "#CulturalInsights"
     },
     {
-      "id": 2,
+      "id": "2",
       "usuario": "Roberto_2024",
       "mensaje": "¡Hola a todos! Espero con ansias sumergirme en el inglés.",
       "hashtags": "#LearnTogether #CulturalInsights"

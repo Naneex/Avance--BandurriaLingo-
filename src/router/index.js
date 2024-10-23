@@ -28,6 +28,7 @@ const routes = [
   {path: '/flashcards', component: FlashCardMenu},
   {path: '/flashcards/estudiar/:categoria', name: 'Estudiar', component: () => import('../views/StudyFlashCard.vue')},
   {path: '/flashcards/crear/:categoria', name: 'Crear', component: () => import('../views/CrearFlashCard.vue')},
+  {path: '/chat/:id_usuario', component: ChatWeb, props: true },
   {
     path: '/Foro',
     name: 'ForoBandurria',
