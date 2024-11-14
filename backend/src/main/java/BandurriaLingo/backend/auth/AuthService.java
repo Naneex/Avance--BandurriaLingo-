@@ -1,6 +1,7 @@
 
 package BandurriaLingo.backend.auth;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import BandurriaLingo.backend.jwt.JwtService;
@@ -15,6 +16,7 @@ class AuthService {
 
     private final UsuarioRepository userRepository;
     private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
 
     public AuthResponse login (LoginRequest loginRequest) {
         return null;
@@ -24,7 +26,7 @@ class AuthService {
 
         Usuario user = Usuario.builder()
             .usuario(request.getUsuario())
-            .contrasena(request.getContrasena())
+            .contrasena(passwordEncoder.encode(request.getContrasena()))
             .idiomaDominado(request.getIdiomaDominado())
             .idiomaAprender(request.getIdiomaAprender())
             .role(Role.USER)
