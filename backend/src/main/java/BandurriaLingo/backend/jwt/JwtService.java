@@ -6,17 +6,27 @@
 package BandurriaLingo.backend.jwt;
 
 import java.security.Key;
+import java.util.Base64;
 
 import io.jsonwebtoken.security.Keys;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+
+import javax.crypto.Mac;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 
@@ -47,5 +57,40 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
+    public String getUsuarioFromToken(String token) {
+        return getClaim(token, Claims::getSubject);
+    
+    }
 
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        final String usuario = getUsuarioFromToken(token);
+        return (usuario.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        
+    }
+
+    private Claims getAllClaims(String token) {
+        return Jwts.parser()
+            .setSigningKey(getKey())
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
+    }
+    
+    public <T> T getClaim(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = getAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Date getExpiration (String token){
+        return getClaim(token, Claims::getExpiration);
+    }
+
+    private boolean isTokenExpired(String token){
+        return getExpiration(token).before(new Date());
+    }
+
+   
 }
+
+
+
