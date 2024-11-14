@@ -1,6 +1,6 @@
 package BandurriaLingo.backend.jwt;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
