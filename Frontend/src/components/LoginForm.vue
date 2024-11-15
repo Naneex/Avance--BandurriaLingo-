@@ -17,31 +17,36 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       usuario: '',
-      contraseña: ''
+      contraseña: '',
+      alert: ''
     };
   },
   methods: {
     async loginUser() {
-
       if (this.usuario === '' || this.contraseña === '') {
-        alert('Para iniciar sesión hay que llenar todos los campos');
+        this.alert = 'Para iniciar sesión hay que llenar todos los campos';
         return;
       }
       try {
-        const response = await fetch(`http://localhost:3000/usuario?usuario=${this.usuario}&contraseña=${this.contraseña}`);
-        const usuarios = await response.json();
-        if (usuarios.length > 0) {
-          localStorage.setItem('usuarioLogueado', JSON.stringify(usuarios[0]));
-          this.$router.push('/Main');
-        } else {
-          alert('Usuario o contraseña incorrectos, vuelva a intentarlo');
+        const response = await axios.post('http://localhost:8080/auth/login', {
+          usuario: this.usuario,
+          contrasena: this.contraseña
+        });
+        const token = response.data.token;
+
+        if (token) {
+          localStorage.setItem('token', token);
+          this.$router.push('/Main'); 
         }
       } catch (error) {
         console.error('Error al intentar hacer login:', error);
+        this.alert = 'Usuario o contraseña incorrectos, vuelva a intentarlo';
       }
     },
 

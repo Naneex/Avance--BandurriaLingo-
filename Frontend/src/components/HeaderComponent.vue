@@ -92,6 +92,9 @@
     },
 
     returnToLogin() {
+      localStorage.removeItem('token');
+
+      localStorage.removeItem('usuarioLogueado');
       this.$router.push('/login');
     },
 

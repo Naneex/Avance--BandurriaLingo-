@@ -31,73 +31,50 @@
   </template>
   
   <script>
-  export default {
-    data() {
-      return {
-        usuario: '',
-        contraseña: '',
-        idiomaDominado: '',
-        idiomaAprender: '',
-        xp: 0,
-        nivel:0,
-        imagen: '',
-        rango: '',
-        flashcards: [],
-        rachaDiaria: 0,
-        retoDiarioJugado: false,
+import axios from 'axios';
 
-      };
-    },
-    methods: {
-        async registerUser() {
-
-        if (this.usuario === '' || this.contraseña === '' || this.idiomaDominado === '' || this.idiomaAprender === '') {
-            alert('Para registrarse hay que llenar todos los campos');
-            return;
-        }
-
-        try {
-        const response = await fetch(`http://localhost:3000/usuario?usuario=${this.usuario}`);
-        const usuarios = await response.json();
-        
-        if (usuarios.length > 0) {
-            alert('Este usuario ya existe');
-            return; 
-        }
-
-        const newUser = { 
-            usuario: this.usuario, 
-            contraseña: this.contraseña,
-            idiomaDominado: this.idiomaDominado,
-            idiomaAprender: this.idiomaAprender,
-            xp: this.xp,
-            nivel: this.nivel,
-            imagen: "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp",
-            rango:  "Novato",
-            flashcards: this.flashcards,
-            rachaDiaria: this.rachaDiaria,
-            retoDiarioJugado: this.retoDiarioJugado
-
-        };
-        
-        await fetch('http://localhost:3000/usuario', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newUser)
-        });
-
-        this.$router.push('/login');
-        } catch (error) {
-        console.error('Error registering user:', error);
-        }
-    },
-  
-      redirectToLogin() {
-        this.$router.push('/login'); 
+export default {
+  data() {
+    return {
+      usuario: '',
+      contraseña: '',
+      idiomaDominado: '',
+      idiomaAprender: '',
+      alert: ''
+    };
+  },
+  methods: {
+    async registerUser() {
+      if (this.usuario === '' || this.contraseña === '' || this.idiomaDominado === '' || this.idiomaAprender === '') {
+        this.alert = 'Para registrarse hay que llenar todos los campos';
+        return;
       }
+
+      try {
+        const response = await axios.post('http://localhost:8080/auth/register', {
+          usuario: this.usuario,
+          contrasena: this.contraseña,
+          idiomaDominado: this.idiomaDominado,
+          idiomaAprender: this.idiomaAprender
+        });
+        
+        const token = response.data.token;
+        if (token) {
+          localStorage.setItem('token', token);
+          this.$router.push('/login');
+        }
+      } catch (error) {
+        console.error('Error al intentar registrar usuario:', error);
+        this.alert = 'Hubo un problema al registrar el usuario. Inténtalo nuevamente';
+      }
+    },
+
+    redirectToLogin() {
+      this.$router.push('/login'); 
     }
-  };
-  </script>
+  }
+};
+</script>
   
   <style scoped>
   .login-container {
