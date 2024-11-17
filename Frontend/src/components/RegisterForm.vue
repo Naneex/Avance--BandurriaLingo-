@@ -60,7 +60,6 @@ export default {
         
         const token = response.data.token;
         if (token) {
-          localStorage.setItem('token', token);
           this.$router.push('/login');
         }
       } catch (error) {
