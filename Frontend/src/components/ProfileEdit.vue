@@ -8,7 +8,11 @@
         <button v-if="usuarioPerfil.id === usuarioLogueado.id" class="edit-profile" @click="editarPerfil" >
           {{ modoEdicion = 'Guardar Cambios' }}
         </button>
-        <input v-if="modoEdicion" type="text" v-model="imagenUrl" placeholder="Pega el enlace de la imagen" class="profile-url">
+        <br>
+        <button v-if="usuarioPerfil.id === usuarioLogueado.id" class="edit-profile" @click="cancelarCambios" >
+          {{ modoEdicion = 'Cancelar Cambios' }}
+        </button>
+        <input v-if="modoEdicion" type="text" v-model="usuarioPerfil.imagen" placeholder="Pega el enlace de la imagen" class="profile-url">
         <hr class="linea-bajo-perfil" />
       </div>
       <div class="badges">
@@ -50,55 +54,88 @@ export default {
     };
   },
   created() {
-    this.obtenerUsuarioLogueado();
+    this.obtenerUsuarioLogueado().then(() => {
     this.obtenerPerfilUsuario();
+    });
   },
   methods: {
-    obtenerUsuarioLogueado() {
-      const usuario = localStorage.getItem('usuarioLogueado');
-      if (usuario) {
-        this.usuarioLogueado = JSON.parse(usuario);
-      } else {
-        console.error('No hay usuario logueado.');
+    async obtenerUsuarioLogueado() {
+      try {
+        const response = await axios.get("http://localhost:8080/profile/me", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioLogueado = response.data;
+        console.log("Usuario logueado:", this.usuarioLogueado);
+      } catch (error) {
+        console.error("Error al obtener el usuario logueado:", error.response || error);
+        alert("No se pudo obtener el usuario logueado. Verifica tu autenticación.");
       }
     },
     async obtenerPerfilUsuario() {
       const id = this.$route.params.id; 
       try {
-        const response = await axios.get(`http://localhost:3000/usuario/${id}`);
-        this.usuarioPerfil = response.data;
-        this.imagenUrl = this.usuarioPerfil.imagen;
+        const response = await axios.get(`http://localhost:8080/profile/${id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioPerfil = response.data; 
+        console.log("Perfil del usuario:", this.usuarioPerfil);
       } catch (error) {
-        console.error('Error al obtener el perfil:', error);
+        console.error("Error al obtener el perfil del usuario:", error.response || error);
+        alert("No se pudo obtener el perfil del usuario.");
       }
     },
-
     editarPerfil() {
       if (this.modoEdicion) {
         this.actualizarUsuario();
+      } else {
+        this.modoEdicion = true; 
       }
-      this.modoEdicion = !this.modoEdicion;
-
-      this.$router.push(`/profile/${this.usuarioLogueado.id}`);
     },
-
     async actualizarUsuario() {
       try {
-        const id = this.usuarioPerfil.id;
+      const imagenPerfil = this.usuarioPerfil.imagen?.trim() || '';
+      const imagenLogueado = this.usuarioLogueado.imagen?.trim() || '';
 
-        if (this.imagenUrl) {
-          this.usuarioPerfil.imagen = this.imagenUrl;
-        }
-
-        const response = await axios.put(`http://localhost:3000/usuario/${id}`, {
-          ...this.usuarioPerfil
-        });
-
-        alert('Cambios guardados con éxito');
-      } catch (error) {
-        console.error('Error al actualizar el perfil', error);
-        alert('Hubo un problema al guardar los cambios');
+      if (!this.usuarioPerfil.usuario?.trim()) {
+        alert("El nombre de usuario no puede estar vacío.");
+      } else if (
+        this.usuarioPerfil.usuario === this.usuarioLogueado.usuario &&
+        imagenPerfil === imagenLogueado
+      ) {
+        alert("Tienes que hacer al menos un cambio para guardar.");
+        return;
       }
+      const id = this.usuarioPerfil.id;
+
+      if (this.imagenUrl) {
+      this.usuarioPerfil.imagen = this.imagenUrl; 
+      }
+
+      const response = await axios.put(
+        `http://localhost:8080/profile/me`,
+        { ...this.usuarioPerfil }, 
+        {
+          headers: { 
+            Authorization: `Bearer ${localStorage.getItem("token")}`, 
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+      const newToken = response.data.token;
+      localStorage.setItem("token", newToken);
+
+      alert("Cambios guardados con éxito");
+      this.$router.push(`/profile/${id}`); 
+      } catch (error) {
+        console.error("Error al actualizar el perfil", error);
+        alert("Hubo un problema al guardar los cambios");
+      }
+    },
+    async cancelarCambios() {
+      this.modoEdicion = false;
+      const id = this.usuarioPerfil.id;
+      this.$router.push(`/profile/${id}`);
     }
   },
   components: {

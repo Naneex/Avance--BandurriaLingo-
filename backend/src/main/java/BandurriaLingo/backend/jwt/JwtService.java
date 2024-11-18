@@ -13,12 +13,16 @@ import java.util.function.Function;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+
+import org.springframework.http.HttpHeaders;
+import jakarta.servlet.http.HttpServletRequest;
 
 
 @Service
@@ -34,7 +38,7 @@ public class JwtService {
         JwtBuilder jwtBuilder = Jwts.builder()
                 .subject(user.getUsername())
                 .issuedAt(new Date()) 
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24)) 
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) 
                 .signWith(getKey());
                 extraClaims.forEach(jwtBuilder::claim);
 
@@ -78,6 +82,18 @@ public class JwtService {
     private boolean isTokenExpired(String token){
         return getExpiration(token).before(new Date());
     }
+
+    public String getTokenFromRequest(HttpServletRequest request){
+        final String authHeader=request.getHeader(HttpHeaders.AUTHORIZATION);
+
+        if(StringUtils.hasText(authHeader) && authHeader.startsWith("Bearer ")){
+            return authHeader.substring(7);
+        }
+        return null;
+    }
+
+   
+
 
    
 }

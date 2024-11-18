@@ -8,6 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -60,11 +62,16 @@ public class Usuario implements UserDetails{
     @Builder.Default
     private String rango = "novato";
 
+    @Column(nullable = false)
+    @Builder.Default
+    private String imagen = "";
+
     @Enumerated(EnumType.STRING)
     Role role;
 
 
     @Override
+    @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority((role.name())));
     }

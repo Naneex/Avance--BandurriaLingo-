@@ -37,10 +37,14 @@ export default {
     async obtenerPerfilUsuario() {
       const id = this.$route.params.id; 
       try {
-        const response = await axios.get(`http://localhost:3000/usuario/${id}`);
-        this.usuarioPerfil = response.data;
+        const response = await axios.get(`http://localhost:8080/profile/${id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioPerfil = response.data; 
+        console.log("Perfil del usuario:", this.usuarioPerfil);
       } catch (error) {
-        console.error('Error al obtener el perfil:', error);
+        console.error("Error al obtener el perfil del usuario:", error.response || error);
+        alert("No se pudo obtener el perfil del usuario.");
       }
     }
 }

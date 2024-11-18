@@ -26,9 +26,12 @@ public class SecurityConfig {
     {
         return http
             .csrf(csrf -> csrf.disable())
+            .cors()
+            .and()
             .authorizeHttpRequests(authRequest -> 
               authRequest
                 .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/profile/**").authenticated()
                 .anyRequest().authenticated()
                 )
             .sessionManagement(sessionManager->

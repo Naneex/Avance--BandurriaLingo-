@@ -50,46 +50,38 @@ export default {
   created() {
     this.obtenerUsuarioLogueado();
     this.obtenerPerfilUsuario();
+    
   },
   methods: {
-    obtenerUsuarioLogueado() {
-      const usuario = localStorage.getItem('usuarioLogueado');
-      if (usuario) {
-        this.usuarioLogueado = JSON.parse(usuario);
-      } else {
-        console.error('No hay usuario logueado.');
+    async obtenerUsuarioLogueado() {
+      try {
+        const response = await axios.get("http://localhost:8080/profile/me", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioLogueado = response.data;
+        console.log("Usuario logueado:", this.usuarioLogueado);
+      } catch (error) {
+        console.error("Error al obtener el usuario logueado:", error.response || error);
+        alert("No se pudo obtener el usuario logueado. Verifica tu autenticación.");
       }
     },
     async obtenerPerfilUsuario() {
       const id = this.$route.params.id; 
       try {
-        const response = await axios.get(`http://localhost:3000/usuario/${id}`);
-        this.usuarioPerfil = response.data;
+        const response = await axios.get(`http://localhost:8080/profile/${id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioPerfil = response.data; 
+        console.log("Perfil del usuario:", this.usuarioPerfil);
       } catch (error) {
-        console.error('Error al obtener el perfil:', error);
+        console.error("Error al obtener el perfil del usuario:", error.response || error);
+        alert("No se pudo obtener el perfil del usuario.");
       }
     },
     editarPerfil() {
       this.$router.push(`/profile/${this.usuarioLogueado.id}/editar`);
     },
-    async actualizarUsuario() {
-      try {
-        const id = this.usuarioPerfil.id;
-
-        if (this.imagenUrl) {
-          this.usuarioPerfil.imagen = this.imagenUrl;
-        }
-
-        const response = await axios.put(`http://localhost:3000/usuario/${id}`, {
-          ...this.usuarioPerfil
-        });
-
-        alert('Cambios guardados con exito');
-      } catch (error) {
-        console.error('Error al actualizar el perfil', error);
-        alert('Hubo un problema al guardar los cambios');
-      }
-    }
+    
   },
   components: {
     ProfileBadges

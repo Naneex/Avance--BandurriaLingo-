@@ -34,24 +34,31 @@
     },
     methods: {
       async obtenerPerfilUsuario() {
-        const id = this.$route.params.id;
-        try {
-          const response = await axios.get(`http://localhost:3000/usuario/${id}`);
-          this.usuarioPerfil = response.data;
-          this.comentarios = this.usuarioPerfil.comentarios || [];  
-        } catch (error) {
-          console.error('Error al obtener el perfil:', error);
-        }
-      },
+      const id = this.$route.params.id; 
+      try {
+        const response = await axios.get(`http://localhost:8080/profile/${id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioPerfil = response.data; 
+        console.log("Perfil del usuario:", this.usuarioPerfil);
+      } catch (error) {
+        console.error("Error al obtener el perfil del usuario:", error.response || error);
+        alert("No se pudo obtener el perfil del usuario.");
+      }
+    },
   
-      obtenerUsuarioLogueado() {
-        const usuario = localStorage.getItem('usuarioLogueado');
-        if (usuario) {
-          this.usuarioLogueado = JSON.parse(usuario);
-        } else {
-          console.error('No hay usuario logueado.');
-        }
-      },
+      async obtenerUsuarioLogueado() {
+      try {
+        const response = await axios.get("http://localhost:8080/profile/me", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        this.usuarioLogueado = response.data;
+        console.log("Usuario logueado:", this.usuarioLogueado);
+      } catch (error) {
+        console.error("Error al obtener el usuario logueado:", error.response || error);
+        alert("No se pudo obtener el usuario logueado. Verifica tu autenticación.");
+      }
+    },
   
       async enviarComentario() {
         if (this.nuevoComentario.trim() === '') {

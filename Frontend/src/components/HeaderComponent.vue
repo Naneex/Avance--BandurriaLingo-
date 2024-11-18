@@ -72,6 +72,9 @@
 </template>
   
 <script>
+
+import axios from 'axios';
+
   export default {
   name: 'HeaderComponent',
 
@@ -99,14 +102,28 @@
     },
 
     redirectToProfile() {
-      const usuario = localStorage.getItem('usuarioLogueado');
-      if (usuario) {
-        const usuarioLogueado = JSON.parse(usuario);
-        this.$router.push(`/profile/${usuarioLogueado.id}`); 
+      const token = localStorage.getItem('token'); 
+      if (token) {
+        axios.get("http://localhost:8080/profile/me", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        .then(response => {
+          const usuarioLogueado = response.data; 
+          if (usuarioLogueado && usuarioLogueado.id) {
+            this.$router.push(`/profile/${usuarioLogueado.id}`);
+          } else {
+            console.error('No se pudo obtener el ID del usuario logueado.');
+          }
+        })
+        .catch(error => {
+          console.error('Error al obtener el usuario logueado:', error.response || error);
+          alert('Hubo un problema al obtener los datos del usuario. Intenta iniciar sesión nuevamente.');
+        });
       } else {
-        console.error('No hay usuario logueado.');
+        console.error('No hay token disponible en el almacenamiento local.');
+        this.$router.push('/login'); // Redirige al login si no hay un token
       }
-    }
+    },
   },
 
   props: {
