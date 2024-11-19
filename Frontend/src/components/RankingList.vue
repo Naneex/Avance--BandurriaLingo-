@@ -45,10 +45,15 @@ export default {
   methods: {
     async fetchUsuarios() {
       try {
-        const response = await axios.get('http://localhost:3000/usuario');
+        const token = localStorage.getItem('token'); 
+        const response = await axios.get('http://localhost:8080/ranking/list', {
+          headers: {
+            Authorization: `Bearer ${token}`, 
+          },
+        });
         this.usuarios = response.data;
       } catch (error) {
-        console.error('Error', error);
+        console.error('Error al obtener el top ranking:', error);
       }
     },
   },

@@ -47,14 +47,18 @@ export default {
   },
   methods: {
     async fetchTopUsuarios() {
-    try {
-      const response = await axios.get('http://localhost:3000/usuario?_sort=nivel&_order=desc');
-      console.log(response.data); 
-      this.usuarios = response.data.sort((a, b) => b.nivel - a.nivel).slice(0, 3);
-    } catch (error) {
-      console.error('Error error:', error);
+      try {
+        const token = localStorage.getItem('token'); 
+        const response = await axios.get('http://localhost:8080/ranking/top', {
+          headers: {
+            Authorization: `Bearer ${token}`, 
+          },
+        });
+        this.usuarios = response.data;
+      } catch (error) {
+        console.error('Error al obtener el top ranking:', error);
+      }
     }
-  }
   },
 };
 </script>
