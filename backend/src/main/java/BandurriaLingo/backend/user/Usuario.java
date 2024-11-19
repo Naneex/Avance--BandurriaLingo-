@@ -66,6 +66,10 @@ public class Usuario implements UserDetails{
     @Builder.Default
     private String imagen = "";
 
+    @Column(nullable = false)
+    @Builder.Default
+    private Integer racha_diaria= 0;
+
     @Enumerated(EnumType.STRING)
     Role role;
 

@@ -5,9 +5,9 @@
     <img v-else-if="usuarioPerfil.idiomaDominado === 'Inglés'" src="../assets/Imagenes/USA.png" alt="Bandera de Estados Unidos" />
     <br />
 
-    <div class="fire-badge" v-if="usuarioPerfil.rachaDiaria > 0">
-      <img v-if="usuarioPerfil.rachaDiaria >= 1" src="../assets/Imagenes/Fuego.png" alt="" />
-      <span class="racha-number">{{ usuarioPerfil.rachaDiaria }}</span>
+    <div class="fire-badge" v-if="usuarioPerfil.racha_diaria > 0">
+      <img v-if="usuarioPerfil.racha_diaria >= 1" src="../assets/Imagenes/Fuego.png" alt="" />
+      <span class="racha-number">{{ usuarioPerfil.racha_diaria }}</span>
     </div>
 
     <div class="fire-badge" v-else>
