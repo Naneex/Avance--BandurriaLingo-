@@ -22,6 +22,8 @@
 <script>
 import ItemPares from './ItemPares.vue';
 import HeaderComponent from './HeaderComponent.vue';
+import axios from 'axios';
+
 
 export default {
   components: {
@@ -36,7 +38,8 @@ export default {
       openedPair: [],  
       lockBoard: false, 
       traducciones: {}, 
-      mensajeCompletado: ""
+      mensajeCompletado: "",
+      usuarioLogueado: {},
     };
   },
   mounted() {
@@ -45,7 +48,17 @@ export default {
   methods: {
     async obtenerSetsDePalabras() {
       try {
-        const response = await fetch('http://localhost:3000/parespalabras');
+        const response = await fetch('http://localhost:8080/parespalabras', {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`, 
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
         this.paresPalabras = data;  
         this.shuffleWords(); 
@@ -55,22 +68,42 @@ export default {
     },
 
     shuffleWords() {
-      if (this.paresPalabras.length === 0) return; 
+      console.log("paresPalabras:", this.paresPalabras);
 
-      
+      if (this.paresPalabras.length === 0) {
+        console.error("No hay datos en paresPalabras");
+        return;
+      }
+
       const randomSet = this.paresPalabras[Math.floor(Math.random() * this.paresPalabras.length)];
+      console.log("randomSet seleccionado:", randomSet);
+
+      if (!randomSet || !randomSet.palabras) {
+        console.error("El conjunto seleccionado no tiene palabras o está mal formado:", randomSet);
+        return;
+      }
+
       this.shuf_palabras = randomSet.palabras
-        .map(pair => [pair.es, pair.en]) 
-        .flat()  
-        .sort(() => Math.random() - 0.5);
+        .map(pair => [pair.palabraEs, pair.palabraEn]) 
+        .flat() 
+        .sort(() => Math.random() - 0.5); 
+
+      console.log("shuf_palabras:", this.shuf_palabras);
+
       this.crearTraducciones(randomSet.palabras);
     },
 
     crearTraducciones(palabras) {
+      console.log("Creando traducciones con:", palabras);
+
       this.traducciones = {};
       palabras.forEach(p => {
-        this.traducciones[p.es] = p.en;
-        this.traducciones[p.en] = p.es;
+        if (p.palabraEs && p.palabraEn) {
+          this.traducciones[p.palabraEs] = p.palabraEn;
+          this.traducciones[p.palabraEn] = p.palabraEs;
+        } else {
+          console.error("Par de palabras inválido:", p);
+        }
       });
     },
 
@@ -121,38 +154,57 @@ export default {
       this.mensajeCompletado = "";
     },
 
-    completeGame() {
-      const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
-      if (usuario) {
-        usuario.xp += 10;  
-        if (usuario.xp >= 30) {  
-          usuario.nivel += 1; 
-          usuario.xp = 0;  
+    async completeGame() {
+      const response = await axios.get("http://localhost:8080/profile/me", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+      this.usuarioLogueado = response.data;
+
+
+      if (this.usuarioLogueado) {
+        this.usuarioLogueado.exp += 10;  
+        if (this.usuarioLogueado.exp >= 30) {  
+          this.usuarioLogueado.nivel += 1; 
+          this.usuarioLogueado.exp = 0;  
         }
-        this.updateUserInServer(usuario);
-        this.mensajeCompletado = `Juego completado! +10 EXP, eres nivel ${usuario.nivel} con ${usuario.xp} EXP, te faltan ${30 - usuario.xp} de exp para subir al nivel ${usuario.nivel + 1}`;
+        this.updateUserInServer(this.usuarioLogueado);
+        this.mensajeCompletado = `Juego completado! +10 EXP, eres nivel ${this.usuarioLogueado.nivel} con ${this.usuarioLogueado.exp} EXP, te faltan ${30 - this.usuarioLogueado.exp} de exp para subir al nivel ${this.usuarioLogueado.nivel + 1}`;
       }
     },
 
     async updateUserInServer(usuario) {
       try {
-        const response = await fetch(`http://localhost:3000/usuario/${usuario.id}`, {
-          method: 'PATCH',
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+          console.error("No se encontró el token en localStorage.");
+          return;
+        }
+
+       
+        const response = await fetch(`http://localhost:8080/usuario/${this.usuarioLogueado.id}`, {
+          method: "PUT",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`, 
           },
           body: JSON.stringify({
-            xp: usuario.xp,
-            nivel: usuario.nivel,
+            exp: this.usuarioLogueado.exp,
+            nivel: this.usuarioLogueado.nivel,
           }),
         });
 
         if (response.ok) {
-          console.log('Datos actualizados correctamente en el servidor');
-          localStorage.setItem('usuario', JSON.stringify(usuario));
-        } 
+          console.log("Datos actualizados correctamente en el servidor");
+          localStorage.setItem("usuario", JSON.stringify(this.usuarioLogueado)); 
+        } else {
+          console.error(
+            "Error al actualizar los datos en el servidor:",
+            response.status
+          );
+        }
       } catch (error) {
-        console.error('Error de red al intentar actualizar el usuario:', error);
+        console.error("Error de red al intentar actualizar el usuario:", error);
       }
     }
   },

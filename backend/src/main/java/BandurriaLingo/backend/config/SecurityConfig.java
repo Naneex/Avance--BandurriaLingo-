@@ -2,6 +2,7 @@ package BandurriaLingo.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -32,6 +33,9 @@ public class SecurityConfig {
               authRequest
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/profile/**").authenticated()
+                .requestMatchers("/parespalabras/**").authenticated()
+                .requestMatchers(HttpMethod.PUT, "/usuario/**").authenticated()
+                .requestMatchers(HttpMethod.GET, "/profile/**").authenticated()
                 .anyRequest().authenticated()
                 )
             .sessionManagement(sessionManager->
