@@ -46,11 +46,19 @@ export default {
   methods: {
     async registerUser() {
       if (this.usuario === '' || this.contraseña === '' || this.idiomaDominado === '' || this.idiomaAprender === '') {
-        this.alert = 'Para registrarse hay que llenar todos los campos';
+        alert('Por favor, llena todos los campos');
         return;
       }
 
       try {
+  
+        const userExistsResponse = await axios.get(`http://localhost:8080/auth/check/${this.usuario}`);
+        if (userExistsResponse.data) { 
+          alert('El usuario ya existe, intente con otro nombre de usuario');
+          return;
+        }
+
+        // Registrar el usuario si no existe
         const response = await axios.post('http://localhost:8080/auth/register', {
           usuario: this.usuario,
           contrasena: this.contraseña,
